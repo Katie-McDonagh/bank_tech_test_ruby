@@ -23,7 +23,7 @@ end
 
   it { is_expected.to respond_to(:withdraw).with(1).argument }
 
-  it 'can top up the balance' do
+  it 'can deduct from the balance' do
 
     expect{ subject.withdraw 1 }.to change{ subject.balance }.by -1
   end
