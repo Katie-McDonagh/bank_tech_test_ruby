@@ -13,6 +13,16 @@ describe Transaction do
   it 'can top up the balance' do
     expect{ subject.deposit 1 }.to change{ subject.balance }.by 1
   end
+end
+
+  describe '#withdraw' do
+
+  it { is_expected.to respond_to(:withdraw).with(1).argument }
+
+  it 'can top up the balance' do
+
+    expect{ subject.withdraw 1 }.to change{ subject.balance }.by -1
+  end
 
 end
 end
