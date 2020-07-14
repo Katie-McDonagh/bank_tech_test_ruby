@@ -2,6 +2,8 @@ require 'transaction'
 
 describe Transaction do
 
+  DATE = Time.now.strftime('%d/%m/%y')
+
   let(:transaction1) do
     { credit: '10' }
   end
@@ -25,7 +27,9 @@ describe Transaction do
   it 'adds the deposit transaction to the history' do 
     subject = Transaction.new
     subject.deposit(10)
-    expect(subject.history).to eq([{credit:10}])
+    expect(subject.history).to eq([{credit:10, balance: 10, date: DATE}])
+end
+
 end
 
   describe '#withdraw' do
@@ -37,5 +41,32 @@ end
     expect{ subject.withdraw 1 }.to change{ subject.balance }.by -1
   end
 
+  it 'adds the withdraw transaction to the history' do 
+    subject = Transaction.new
+    subject.deposit(10)
+    subject.withdraw(5)
+    expect(subject.history).to eq([{credit: 10, balance: 10, date: DATE}, {debit: 5, balance: 5, date: DATE}])
+  end
 end
+
+describe '#transactions' do 
+
+it "adds the current balance to the history" do 
+  subject = Transaction.new
+  subject.deposit(10)
+  subject.withdraw(5)
+  expect(subject.history).to eq([{credit: 10, balance: 10, date: DATE}, {debit: 5, balance: 5, date: DATE}])
+end
+
+it 'adds the date of the transaction to the history' do
+  DATE = Time.now.strftime('%d/%m/%y')
+  subject = Transaction.new 
+  subject.deposit(10)
+  expect(subject.history).to eq([{:balance=>10, :credit=>10, :date=>DATE}])
+end
+
+
+
+end
+
 end

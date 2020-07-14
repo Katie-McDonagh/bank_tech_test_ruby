@@ -1,3 +1,4 @@
+require 'date'
 class Transaction
   attr_reader :balance, :history
 
@@ -9,11 +10,12 @@ class Transaction
 
   def deposit(amount)
     @balance += amount
-    @history.push({credit: amount})
+    @history.push({credit: amount, balance: @balance, date: Date.today.strftime('%d/%m/%y')})
   end
 
   def withdraw(amount)
     @balance -= amount
+    @history.push({debit: amount, balance: @balance, date: Date.today.strftime('%d/%m/%y')})
   end
     
 end
