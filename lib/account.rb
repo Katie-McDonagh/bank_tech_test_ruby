@@ -11,5 +11,7 @@ class Account
     @transaction.deposit(amount)
   end
 
-
+  def withdraw(amount)
+    @transaction.withdraw(amount)
+  end
 end
