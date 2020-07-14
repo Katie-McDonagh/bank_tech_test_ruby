@@ -4,7 +4,7 @@ require 'statment'
 describe Account do
   subject(:account) { Account.new(transaction, statement) }
   let(:transaction) { double('transaction') }
-  let(:statement) { double('statement')}
+  let(:statement) { double('statement') }
 
   describe '#initialize' do
     it 'creates an instance of transactions' do
@@ -20,7 +20,7 @@ describe Account do
     end
   end
 
-    describe '#withdraw' do
+  describe '#withdraw' do
     it 'calls the withdraw method on transaction' do
       allow(transaction).to receive(:withdraw)
       account.withdraw(5)
@@ -30,9 +30,9 @@ describe Account do
 
   describe '#print_statement' do
     before do
-    allow(statement).to receive(:statment_print)
-    allow(transaction).to receive(:history)
-    end 
+      allow(statement).to receive(:statment_print)
+      allow(transaction).to receive(:history)
+    end
 
     it 'calls the statment print method on statement' do
       account.print_statement

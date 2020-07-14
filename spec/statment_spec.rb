@@ -11,7 +11,6 @@ describe Statement do
     let(:statment_print) do
       " Date    || Credit  || Debit  || Balance\n" \
       " 1/01/20 || 10 || 0  || 10\n" \
-
     end
     it 'prints the transaction_history' do
       expect { statement.statment_print(history) }.to output(statment_print).to_stdout

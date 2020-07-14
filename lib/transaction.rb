@@ -9,13 +9,22 @@ class Transaction
   end
 
   def deposit(amount)
-    @balance += amount
-    @history.push({credit: amount, balance: @balance, date: Date.today.strftime('%d/%m/%y')})
+    add_deposit(amount)
+    @history.push({ credit: amount, balance: @balance, date: Date.today.strftime('%d/%m/%y') })
   end
 
   def withdraw(amount)
-    @balance -= amount
-    @history.push({debit: amount, balance: @balance, date: Date.today.strftime('%d/%m/%y')})
+    withdraw_funds(amount)
+    @history.push({ debit: amount, balance: @balance, date: Date.today.strftime('%d/%m/%y') })
   end
-    
+
+  private
+
+  def add_deposit(amount)
+    @balance += amount
+  end
+
+  def withdraw_funds(amount)
+    @balance -= amount
+  end
 end

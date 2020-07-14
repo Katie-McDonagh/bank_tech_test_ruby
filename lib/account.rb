@@ -1,7 +1,6 @@
 require_relative 'transaction'
 require_relative 'statment'
 class Account
-  
   attr_reader :transaction, :statement
 
   def initialize(transaction, statement)
