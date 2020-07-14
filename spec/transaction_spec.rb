@@ -6,6 +6,10 @@ describe Transaction do
     expect(subject.balance).to eq(0)
   end
 
+  it 'is initialized with history array to save transactions' do
+    expect(subject.history).to eq([])
+  end
+
   describe '#deposit' do
 
   it { is_expected.to respond_to(:deposit).with(1).argument }

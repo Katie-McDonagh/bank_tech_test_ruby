@@ -1,8 +1,9 @@
 class Transaction
-  attr_reader :balance
+  attr_reader :balance, :history
 
   def initialize
     @balance = 0
+    @history = []
   end
 
   def deposit(amount)
