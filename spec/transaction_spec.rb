@@ -10,7 +10,7 @@ describe Transaction do
   end
 
   let(:transaction_withdraw) do
-    { debit: 10, balance: -10, date: DATE }
+    { debit: 10, balance: 10, date: DATE }
   end
 
   describe '#initialize' do
@@ -40,10 +40,16 @@ describe Transaction do
     it { is_expected.to respond_to(:withdraw).with(1).argument }
 
     it 'can deduct from the balance' do
+      subject.deposit(10)
       expect { subject.withdraw 1 }.to change { subject.balance }.by(-1)
     end
 
+    it 'will prevent withdrawing more money than is in the account' do
+      expect { transaction.withdraw(10) }.to raise_error 'Insufficient funds'
+    end
+
     it 'adds the withdraw transaction to the history' do
+      subject.deposit(20)
       subject.withdraw(10)
       expect(subject.history).to include(transaction_withdraw)
     end

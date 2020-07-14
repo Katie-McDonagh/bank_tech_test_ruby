@@ -3,6 +3,7 @@ class Transaction
   attr_reader :balance, :history
 
   DEFAULT_BALANCE = 0
+
   def initialize
     @balance = DEFAULT_BALANCE
     @history = []
@@ -14,6 +15,7 @@ class Transaction
   end
 
   def withdraw(amount)
+    raise 'Insufficient funds' if amount > @balance
     withdraw_funds(amount)
     @history.push({ debit: amount, balance: @balance, date: Date.today.strftime('%d/%m/%y') })
   end
