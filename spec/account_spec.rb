@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'account'
 require 'statment'
 
@@ -6,11 +8,11 @@ describe Account do
   let(:transaction) { double('transaction') }
   let(:statement) { double('statement') }
 
-  # describe '#initialize' do
-  #   it 'creates an instance of transactions' do
-  #     expect(account.transaction).to eq(transaction)
-  #   end
-  # end
+  describe '#initialize' do
+    it 'creates an instance of transactions' do
+      expect(account.transaction).to eq(transaction)
+    end
+  end
 
   describe '#deposit' do
     it 'calls the deposit method on transaction' do

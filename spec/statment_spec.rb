@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 require 'statment'
 
 describe Statement do
   subject(:statement) { Statement.new }
 
   let(:history) do
-    [{ date: '1/01/20', credit: 10, debit: 0, balance: 10 }]
+    [{ date: '1/01/20', credit: 10, balance: 10 }]
   end
 
   describe '#statment_print' do
-    let(:statment_print) do
+    let(:statement_print) do
       " Date    || Credit  || Debit  || Balance\n" \
-      " 1/01/20 || 10 || 0  || 10\n" \
+      " 1/01/20 || 10 ||   || 10\n" \
     end
     it 'prints the transaction_history' do
-      expect { statement.statment_print(history) }.to output(statment_print).to_stdout
+      expect { statement.statement_print(history) }.to output(statement_print).to_stdout
     end
   end
 end

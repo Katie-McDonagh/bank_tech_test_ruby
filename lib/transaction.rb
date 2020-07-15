@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 require 'date'
+
 class Transaction
   attr_reader :balance, :history
 
@@ -16,6 +19,7 @@ class Transaction
 
   def withdraw(amount)
     raise 'Insufficient funds' if amount > @balance
+
     withdraw_funds(amount)
     @history.push({ debit: amount, balance: @balance, date: Date.today.strftime('%d/%m/%y') })
   end

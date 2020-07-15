@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Statement
-  def statment_print(history)
-    header
+  def statement_print(history)
+    puts ' Date    || Credit  || Debit  || Balance'
     history.reverse_each do |transaction|
       print " #{transaction[:date]} ||",
             " #{transaction[:credit]} ||",
@@ -8,8 +10,4 @@ class Statement
             " #{transaction[:balance]}\n"
     end
   end
-
-  def header
-    puts ' Date    || Credit  || Debit  || Balance'
-  end
-  end
+end
