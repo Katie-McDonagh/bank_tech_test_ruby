@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'statment'
+require 'statement'
 
 describe Statement do
   subject(:statement) { Statement.new }
