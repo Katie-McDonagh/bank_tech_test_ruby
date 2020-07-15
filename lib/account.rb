@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'transaction'
-require_relative 'statment'
+require_relative 'statement'
 class Account
   attr_reader :transaction, :statement
 

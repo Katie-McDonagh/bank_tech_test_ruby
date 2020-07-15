@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'account'
-require 'statment'
+require 'statement'
 
 describe Account do
   subject(:account) { Account.new(transaction, statement) }
@@ -36,10 +36,6 @@ describe Account do
       allow(transaction).to receive(:history)
     end
 
-    # it 'calls the statment print method on statement' do
-    #   account.print_statement
-    #   expect(statement).to have_received(:statment_print)
-    # end
     it 'calls the transaction_history method on transactions' do
       account.print_statement
       expect(transaction).to have_received(:history)

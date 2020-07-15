@@ -41,10 +41,6 @@
           1,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
           1,
           1,
           1,
@@ -121,7 +117,7 @@
           null
         ]
       },
-      "/Users/katiemcdonagh/w10/bank_tech_test_ruby/lib/statment.rb": {
+      "/Users/katiemcdonagh/w10/bank_tech_test_ruby/lib/statement.rb": {
         "lines": [
           null,
           null,
@@ -240,6 +236,6 @@
         ]
       }
     },
-    "timestamp": 1594801469
+    "timestamp": 1594801643
   }
 }
