@@ -39,11 +39,7 @@ date || credit || debit || balance
 
 #### Approach
 
-I split this program into three classes, an Account Class which the user interacts with to make transactions and to display the statment of transactions, a Transaction class to deal with the logic of withdrawing/depositing into their account, and a Statement class to format the statment form above:
-
-![](images/diagram%20(4).svg)
-<img src="./diagram%20(4).svg">
-
+I split this program into three classes, an Account Class which the user interacts with to make transactions and to display the statment of transactions, a Transaction class to deal with the logic of withdrawing/depositing into their account, and a Statement class to format the statment form above.
 
 #### How to run
 

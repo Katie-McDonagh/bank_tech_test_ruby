@@ -19,6 +19,6 @@ class Account
   end
 
   def print_statement
-    @statement.statment_print(transaction.history)
+    @statement.statement_print(transaction.history)
   end
 end
