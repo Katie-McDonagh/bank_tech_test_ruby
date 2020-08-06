@@ -1,11 +1,11 @@
-##Bank tech test
+## Bank tech test
 
 This program aims to allow a user to interact with a bank account via REPL.
 It is built in Ruby, designed to be run in IRB, has 100% test coverage with Simple Cov, and is linted with Rubocop.
 
-###Specification
+### Specification
 
-####Requirements
+#### Requirements
 
 ```
 As a customer,
@@ -24,7 +24,7 @@ To keep an eye on my finances,
 I'd like to see a statment of all my recent transactions
 ```
 
-###Acceptance criteria
+### Acceptance criteria
 Given a client makes a deposit of 1000 on 10-01-2012
 And a deposit of 2000 on 13-01-2012
 And a withdrawal of 500 on 14-01-2012
